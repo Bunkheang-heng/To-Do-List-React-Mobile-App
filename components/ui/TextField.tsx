@@ -1,18 +1,19 @@
 import React, { forwardRef } from "react";
-import { Text, TextInput, TextInputProps, View } from "react-native";
+import { StyleProp, Text, TextInput, TextInputProps, TextStyle, View } from "react-native";
 
 type TextFieldProps = TextInputProps & {
   label?: string;
   error?: string;
   containerClassName?: string;
+  labelStyle?: StyleProp<TextStyle>;
 };
 
 const TextField = forwardRef<TextInput, TextFieldProps>(
-  ({ label, error, containerClassName, className, ...props }, ref) => {
+  ({ label, error, containerClassName, className, labelStyle, ...props }, ref) => {
     return (
       <View className={(containerClassName || "") + " w-full"}>
         {label ? (
-          <Text className="mb-2 text-sm text-gray-700">{label}</Text>
+          <Text className="mb-2 text-sm text-gray-700" style={labelStyle}>{label}</Text>
         ) : null}
         <TextInput
           ref={ref}

@@ -15,7 +15,7 @@ export default function Index() {
 
         <View className="flex-1 justify-center items-center gap-6">
           <Image
-            source={require("../assets/images/react-logo.png")}
+            source={require("../assets/gif/checklist.gif")}
             style={{ width: 140, height: 140 }}
             resizeMode="contain"
           />
