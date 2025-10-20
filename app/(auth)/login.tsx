@@ -7,18 +7,19 @@ import TextField from '../../components/ui/TextField';
 
 export default function LoginScreen() {
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = () => {
-    if (!email || !password) {
-      Alert.alert('Missing fields', 'Please enter both your email and password to continue.');
-      return;
-    } else {
-      console.log(email, password);
-      router.push('/(tabs)');
-    }
+    // if (!email || !password) {
+    //   Alert.alert('Missing fields', 'Please enter both your email and password to continue.');
+    //   return;
+    // } else {
+    //   console.log(email, password);
+  
+    // }
+  router.push('/(tabs)');
   };
 
   return (
@@ -49,9 +50,9 @@ export default function LoginScreen() {
               placeholder="you@example.com"
               autoCapitalize="none"
               keyboardType="email-address"
-              value={email}
-              onChangeText={setEmail}
-              className="bg-slate-100 rounded-xl px-3 py-2"
+              value={"testing@gmail.com"}
+              // onChangeText={setEmail}
+              className="bg-slate-100 rounded-xl px-2 py-3"
             />
 
             <View className="relative">
@@ -59,8 +60,8 @@ export default function LoginScreen() {
                 label="Password"
                 placeholder="••••••••"
                 secureTextEntry={!showPassword}
-                value={password}
-                onChangeText={setPassword}
+                value={"12345"}
+                // onChangeText={setPassword}
                 className="bg-slate-100 rounded-xl px-3 py-2"            
               />
               <TouchableOpacity
